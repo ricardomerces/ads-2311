@@ -1,0 +1,25 @@
+version: '3'
+services:
+  web-prd:
+    image: nginx:1.25-alpine
+    ports:
+      - 80:80
+    volumes:
+      - web-prod:/usr/share/nginx/html
+  web-qa:
+    image: nginx:1.25-alpine
+    ports:
+      - 81:80
+    volumes:
+      - web-qa:/usr/share/nginx/html
+  web-dev:
+    image: nginx:1.25-alpine
+    ports:
+      - 82:80
+    volumes:
+      - web-dev:/usr/share/nginx/html
+
+volumes:
+  web-prod:
+  web-qa:
+  web-dev:
